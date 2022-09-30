@@ -15,15 +15,13 @@ public:
         }
         if(size<max)
         {
-            for(int i=0;i<max;i++)
+            for(int i=0;i<nums.size();i++)
             {
-                if(temp.size()==0||(temp.size()>0 && find(temp.begin(), temp.end(), nums[i])==temp.end()))
-                {
-                    temp.push_back(nums[i]);
-                }
-                else
-                    continue;
+                temp.push_back(nums[i]);
+                int x=nums[i];
+                nums.erase(nums.begin()+i);
                 generate_permutations(nums, res, temp, size+1, max);
+                nums.insert(nums.begin()+i, x);
                 temp.pop_back();
             }
         }
