@@ -8,7 +8,7 @@
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        int buy=prices.at(0), sell=prices.at(0);
+        int buy=prices.at(0);
         int res=0;
         for(int i=0;i<prices.size();i++)
         {
